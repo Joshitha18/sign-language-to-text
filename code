@@ -1,0 +1,120 @@
+int flexSensorPin0 = A0; //analog pin 0
+int flexSensorPin1 = A1; //analog pin 0
+int flexSensorPin2 = A2; //analog pin 0
+int flexSensorPin3 = A3; //analog pin 0
+int flexSensorPin4 = A4; //analog pin 0
+
+void setup(){
+Serial.begin(9600);
+}
+
+void loop(){
+int flexSensorReading1 = analogRead(flexSensorPin0);
+int flexSensorReading2 = analogRead(flexSensorPin1);
+int flexSensorReading3 = analogRead(flexSensorPin2);
+int flexSensorReading4 = analogRead(flexSensorPin3);
+int flexSensorReading5 = analogRead(flexSensorPin4);
+
+//Serial.println(flexSensorReading);
+
+//In my tests I was getting a reading on the arduino between 512, and 614.
+//Using map(), you can convert that to a larger range like 0-100.
+int flex0 = map(flexSensorReading1, 700, 900, 0, 100);
+int flex1 = map(flexSensorReading2, 700, 900, 0, 100);
+int flex2 = map(flexSensorReading3, 700,++++++++++++++900, 0, 100);
+int flex3 = map(flexSensorReading4, 700, 900, 0, 100);
+int flex4 = map(flexSensorReading5, 700, 900, 0, 100);
+
+//Serial.println("flex0 ");
+//Serial.println(flex0);
+//
+//Serial.println("flex1");
+//Serial.println(flex1);
+//
+//Serial.println("flex2");
+//Serial.println(flex2);
+//
+//Serial.println("flex3");
+//Serial.println(flex3);
+//
+//Serial.println("flex4");
+//Serial.println(flex4);
+
+/*
+if(flex0<=35 && flex1 <=30 && flex2 <=35 && flex3<=80 && flex4 <= 50)
+Serial.print("A");
+*/
+
+delay(500);
+
+if(flex0>=40 && flex1 >120 && flex2 >= 50 && flex3>95 && flex4 <= 40)
+Serial.print("A");
+
+if(flex0<40 && flex1 <=120 && flex2 <=40 && flex3<=95 && flex4 > 50)
+Serial.print("B");
+
+if(flex0>=40 && flex1 >120 && flex2 >=50 && flex3<=95 && flex4 > 50)
+Serial.print("D");
+
+if(flex0>=40 && flex1 >120 && flex2 >=50 && flex3>95 && flex4 >50)
+Serial.print("E");
+
+if(flex0<40 && flex1 <=120 && flex2 <=40 && flex3>95 && flex4 <= 50)
+Serial.print("F");
+
+if(flex0<40 && flex1 <=120 && flex2 >=50 && flex3<=95 && flex4 <= 50)
+Serial.print("C");
+
+if(flex0>=40 && flex1 >120 && flex2 >=50 && flex3<=95 && flex4 <= 50)
+Serial.print("G");
+
+if(flex0>=40 && flex1 >120 && flex2 <=40 && flex3<=95 && flex4 <= 50)
+Serial.print("H");
+
+if(flex0<40 && flex1 >120 && flex2 >=50 && flex3>95 && flex4 >50)
+Serial.print("I");
+
+if(flex0<40 && flex1 >120 && flex2 >=50 && flex3<=95 && flex4 >50)
+Serial.print("J");
+
+if(flex0<40 && flex1 >120 && flex2 >=50 && flex3<=95 && flex4 <=50)
+Serial.print("Y");
+
+if(flex0>=40 && flex1 >120 && flex2 <=40 && flex3<=95 && flex4 > 50)
+Serial.print("K");
+
+if(flex0<40 && flex1 >120 && flex2 >=50 && flex3<=95 && flex4 <= 50)
+Serial.print("L");
+
+if(flex0>=40 && flex1 <=120 && flex2 >=50 && flex3<=95 && flex4 > 50)
+Serial.print("M");
+
+if(flex0<40 && flex1 <=120 && flex2 >=50 && flex3>95 && flex4 >50)
+Serial.print("N");
+
+if(flex0<40 && flex1 <=120 && flex2 >=50 && flex3>95 && flex4 <=50)
+Serial.print("O");
+
+if(flex0>=40 && flex1 <=120 && flex2 <=40 && flex3<=95 && flex4 > 50)
+Serial.print("W");
+
+if(flex0>=40 && flex1 <=120 && flex2 <=40 && flex3<=95 && flex4 <= 50)
+Serial.print("Q");
+
+if(flex0>=40 && flex1 <=120 && flex2 <=40 && flex3>95 && flex4 > 50)
+Serial.print("R");
+
+if(flex0>=40 && flex1 >120 && flex2 <=40 && flex3>95 && flex4 > 50)
+Serial.print("T");
+
+
+if(flex0<40 && flex1 >120 && flex2 <=40 && flex3<=95 && flex4 <= 50)
+Serial.print("P");
+
+if(flex0<40 && flex1 <=120 && flex2 <=40 && flex3>95 && flex4 > 50)
+Serial.print("S");
+
+
+
+delay(250); //just here to slow down the output for easier reading
+}
